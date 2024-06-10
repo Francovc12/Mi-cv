@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props{
+    title: string;
+    body:string;
+    img:string;
+}
+const { title, body } = Astro.props;
+import myImagen from "/public/fo.jpg";
+---
+<article>
+    <h3>
+        {title}
+    </h3>
+    <Image src={myImagen} alt="foto" class="imagepresentacion"/>
+    <p>{body}</p>
+</article>
+<style>
+    .imagepresentacion{
+        width:40%;
+        margin: 5px auto;
+        height: 80%;
+        display: inline;
+    }
+    article{
+        height: 200px;
+        width: 500px;
+        margin: 0 auto;
+    }
+    h3{
+        display: block;
+        height: 10%;
+        text-align: center;
+        padding: 10px 50px;
+        color: grey;
+    }
+    p{
+        display: inline;
+        color: white;
+        width: 50%;
+        height: 80%;
+        margin: 0 auto;
+    }
+</style>
